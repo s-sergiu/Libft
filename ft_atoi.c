@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/27 21:34:56 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/04/01 16:15:30 by ssergiu          ###   ########.fr       */
+/*   Created: 2022/03/31 16:08:54 by ssergiu           #+#    #+#             */
+/*   Updated: 2022/04/01 17:46:18 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	*ft_memmove(void *dst, const void *src, unsigned int n)
+int	ft_atoi(const char *str)
 {
-	unsigned int	i;
-	unsigned char	*d;
-	unsigned char	*s;
+	int	i;
+	int	x;
 
 	i = 0;
-	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
-	while (i < n)
+	x = 0;
+	while (str[i] != '\0')
 	{
-		d[i] = s[i];
+		printf("%c", str[i]);
+		if (str[i] == 9 || str[i] == 32 || str[i] == 10 || str[i] == 11
+			|| str[i] == 12 || str[i] == 13)
+			i++;
+		else if (str[i] >= 48 || str[i] <= 57)
+		{
+			x = (int)(str[i]) + x;
+			i++;
+		}
+		else
+			x = x * 10;
 		i++;
 	}
-	dst = d;
-	return (dst);
+	x = x / 10;
+	return (x);
 }

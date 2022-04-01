@@ -6,7 +6,7 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 17:05:23 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/03/29 19:39:46 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/04/01 16:30:40 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,7 @@ int					ft_memcmp(const void *s1, const void *s2, unsigned int n);
 unsigned int		ft_strlcpy(char *dst, char *src, unsigned int dstsize);
 unsigned int		ft_strlcpy(char *dst, char *src, unsigned int dstsize);
 char				*ft_strnstr(const char *haystack, const char *needle, unsigned int len);
+unsigned int		ft_strlcat(char *dst, char *src, unsigned int dstsize);
+int					ft_atoi(const char *str);
 
 #endif
