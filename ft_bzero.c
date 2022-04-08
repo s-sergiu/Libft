@@ -6,13 +6,14 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 21:01:07 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/03/27 18:03:35 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/04/06 15:43:52 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-void	ft_bzero(void *s, unsigned int n)
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned int	i;
+	size_t			i;
 	unsigned char	*r;
 
 	if (n == 0)

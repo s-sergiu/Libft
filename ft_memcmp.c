@@ -6,13 +6,14 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 21:48:05 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/03/27 22:09:55 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/04/06 15:46:47 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, unsigned int n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned int	i;
+	size_t			i;
 	unsigned char	*str1;
 	unsigned char	*str2;
 

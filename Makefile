@@ -6,7 +6,7 @@
 #    By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/25 16:42:02 by ssergiu           #+#    #+#              #
-#    Updated: 2022/04/01 16:30:12 by ssergiu          ###   ########.fr        #
+#    Updated: 2022/04/08 14:42:37 by ssergiu          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ RM = rm -f
 
 FILES = ft_strlen \
 		ft_atoi \
+		ft_calloc \
 		ft_memset \
 		ft_bzero \
 		ft_memcpy \
@@ -37,7 +38,8 @@ FILES = ft_strlen \
 		ft_strlcpy \
 		ft_strlcat \
 		ft_strnstr \
-		ft_strncmp 
+		ft_strncmp \
+		ft_strdup
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))

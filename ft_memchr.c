@@ -6,13 +6,14 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 20:23:30 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/03/27 20:42:43 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/04/06 15:46:14 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-void	*ft_memchr(const void *s, int c, unsigned int n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned int	i;
+	size_t			i;
 	unsigned char	*r;
 
 	i = 0;

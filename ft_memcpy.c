@@ -6,13 +6,14 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 20:45:00 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/03/27 21:38:26 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/04/06 15:47:02 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, unsigned int n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned int	i;
+	size_t			i;
 	unsigned char	*d;
 	unsigned char	*s;
 
