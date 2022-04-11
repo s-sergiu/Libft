@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/28 12:02:17 by jtoty             #+#    #+#             */
-/*   Updated: 2022/04/11 16:34:07 by ssergiu          ###   ########.fr       */
+/*   Created: 2022/04/11 17:09:18 by ssergiu           #+#    #+#             */
+/*   Updated: 2022/04/11 17:10:25 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-int	main(void)
+char *ft_strtrim(char const *s1, char const *set)
 {
+	char *trim;
 
-	char *s = "malloc protection !";
-
-	char *ret = ft_substr(s, 0, 5);
-	printf("malloc usable size:%lu \n", sizeof(ret));
-	printf("test:%s", ret);
-	return (0);
+	return (trim);
 }
