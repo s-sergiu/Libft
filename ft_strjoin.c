@@ -6,7 +6,7 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 17:00:10 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/04/11 17:08:51 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/04/11 19:05:31 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,6 +18,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (str == NULL)
+		return (NULL);
 	while (i < ft_strlen(s1))
 	{
 		str[i] = s1[i];
