@@ -6,13 +6,14 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 16:17:39 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/03/25 00:30:29 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/04/10 13:01:35 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_isalnum(unsigned char s)
+#include "libft.h"
+
+int	ft_isalnum(int c)
 {
-	if ((s >= 65 && s <= 90) || (s >= 97 && s <= 122) || (s >= 48 && s <= 57))
+	if (ft_isalpha(c) || ft_isdigit(c))
 		return (1);
-	else
-		return (0);
+	return (0);
 }

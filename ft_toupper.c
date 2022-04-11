@@ -6,17 +6,13 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 18:14:55 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/03/25 00:35:31 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/04/10 16:45:52 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	ft_toupper(unsigned char c)
 {
-	if (c <= 122 && c >= 97)
-	{
+	if (c <= 'z' && c >= 'a')
 		c = c - 32;
-		return (c);
-	}
-	else
-		return (c);
+	return (c);
 }

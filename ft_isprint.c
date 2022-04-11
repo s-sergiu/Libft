@@ -6,14 +6,13 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 18:07:47 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/03/25 00:33:01 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/04/10 13:11:58 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(unsigned char s)
+int	ft_isprint(int c)
 {
-	if (s >= 32 && s <= 126)
+	if (c >= 32 && c <= 126)
 		return (1);
-	else
-		return (0);
+	return (0);
 }

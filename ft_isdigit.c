@@ -6,14 +6,13 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 16:13:28 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/03/25 00:32:20 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/04/10 13:10:29 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(unsigned char s)
+int	ft_isdigit(int c)
 {
-	if (s >= 48 && s <= 57)
+	if (c >= '0' && c <= '9')
 		return (1);
-	else
-		return (0);
+	return (0);
 }

@@ -6,21 +6,18 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 12:05:46 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/03/25 20:39:11 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/04/10 16:39:12 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
+
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	int		i;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	while (i >= 0)
-	{
-		if (s[i] == c)
-			return ((char *)(s + i));
-		i--;
-	}
+	i = ft_strlen(s);
+	while (i-- >= 0)
+		if (*(char *)(s + i + 1) == (char)c)
+			return ((char *)(s + i + 1));
 	return ((char *)('\0'));
 }
