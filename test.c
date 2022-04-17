@@ -6,7 +6,7 @@
 /*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:02:17 by jtoty             #+#    #+#             */
-/*   Updated: 2022/04/14 16:04:16 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/04/17 15:40:51 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	main(void)
 {
- printf("result: %s \n", ft_strtrim("lorem ipsum dolor sit amet", "te"));
+	ft_itoa(-292);
 }
