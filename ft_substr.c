@@ -6,7 +6,7 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 14:12:08 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/04/15 18:43:35 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/04/18 19:22:11 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -16,6 +16,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned char	*str;
 	size_t			i;
 
+	if (!s)
+		return (NULL);
 	str = malloc(len + 1);
 	if (str == NULL)
 		return (0);

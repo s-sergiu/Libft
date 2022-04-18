@@ -6,7 +6,7 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 17:09:18 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/04/14 18:53:11 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/04/18 19:22:36 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -19,6 +19,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		j;
 	int		i;
 
+	if (!s1)
+		return (NULL);
 	trim = malloc(ft_strlen(s1) + 1 * sizeof(char));
 	if (trim == NULL)
 		return (0);

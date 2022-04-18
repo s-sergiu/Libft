@@ -6,7 +6,7 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 15:43:19 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/04/17 15:45:36 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/04/18 19:20:31 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -14,63 +14,74 @@
 int	nlen(int n)
 {
 	int	i;
+	int sign;
 
-	i = 1;
-	if (n < 10)
+	i = 0;
+	sign = 0;
+	if (n == 0)
 		return (1);
-	while (n > 9)
+	if (n < 0)
+		sign = 1;
+	while (n != 0)
 	{
 		n = n / 10;
 		i++;
 	}
-	return (i);
-}
-
-char	*reverse(char *str, int len)
-{
-	int		i;
-	char	temp;
-
-	i = 0;
-	while (i < len)
-	{
-		temp = str[len];
-		str[len] = str[i];
-		str[i] = temp;
-		i++;
-		len--;
-	}
-	return (str);
+	return (i + sign);
 }
 
 char	*ft_itoa(int n)
 {
+	int		len;
 	char	*result;
 	char	temp;
-	int		len;
-	int		i;
+	int		null;
 
 	len = nlen(n);
-	temp = 0;
-	i = 0;
-	if (n > 0)
-		result = (char *)malloc(len + 1 * sizeof(char));
-	else
+	null = len;
+	
+	result = (char *)malloc((len + 1) * sizeof(char));
+	if (result == NULL)
+		return (NULL);
+	if (n == 0)
+		result[0] = '0';
+	else if (n == -2147483648)
+	{
+		n = n + 1;
+		n = n * -1;
+		while(n > 0)
+		{
+			temp = (char )(n % 10) + '0';
+			result[len - 1] = temp;
+			n = n / 10;
+			len--;
+		}
+		result[0] = '-';
+		result[null - 1] = '8';
+	}
+	else if (n < 0)
 	{
 		n = n * -1;
-		len = nlen(n) + 1;
-		result = (char *)malloc(len + 2 * sizeof(char));
+		while(n > 0)
+		{
+			temp = (char )(n % 10) + '0';
+			result[len - 1] = temp;
+			n = n / 10;
+			len--;
+		}
 		result[0] = '-';
-		i++;
 	}
-	while (i < len)
+	else
 	{
-		temp = (n % 10) + '0';
-		n = n / 10;
-		result[i] = temp;
-		i++;
+		while(n > 0)
+		{
+			temp = (char )(n % 10) + '0';
+			result[len - 1] = temp;
+			n = n / 10;
+			len--;
+		}
 	}
-	result[len] = '\0';
-	result = reverse(result, len - 1);
+	result[null] = '\0';
 	return (result);
 }
+

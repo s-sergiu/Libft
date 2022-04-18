@@ -6,7 +6,7 @@
 #    By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/25 16:42:02 by ssergiu           #+#    #+#              #
-#    Updated: 2022/04/14 16:14:42 by ssergiu          ###   ########.fr        #
+#    Updated: 2022/04/18 19:40:24 by ssergiu          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,8 @@ FILES = ft_strlen \
 		ft_strjoin \
 		ft_itoa \
 		ft_strtrim \
+		ft_strmapi \
+		ft_striteri \
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
