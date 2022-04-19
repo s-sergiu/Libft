@@ -6,7 +6,7 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 21:34:56 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/04/11 13:53:08 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/04/19 17:55:02 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,6 +15,8 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	size_t	i;
 
+	if (!dst && !src)
+		return (NULL);
 	i = 0;
 	if (ft_strlen(src) > ft_strlen(dst))
 		while (n-- > 0)

@@ -6,11 +6,11 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 18:14:55 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/04/10 16:45:52 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/04/19 18:05:57 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_toupper(unsigned char c)
+int	ft_toupper(int c)
 {
 	if (c <= 'z' && c >= 'a')
 		c = c - 32;
