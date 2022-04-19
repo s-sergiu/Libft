@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/28 12:02:17 by jtoty             #+#    #+#             */
-/*   Updated: 2022/04/19 17:34:53 by ssergiu          ###   ########.fr       */
+/*   Created: 2022/04/19 17:10:44 by ssergiu           #+#    #+#             */
+/*   Updated: 2022/04/19 17:16:13 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-int	main(void)
+void	ft_putchar_fd(char c, int fd)
 {
-	ft_putendl_fd("lorem ipsum dolor sit amet", 2);
+	write(fd, &c, 1);
 }

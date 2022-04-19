@@ -6,7 +6,7 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 17:09:18 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/04/18 19:22:36 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/04/19 16:33:00 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,25 +18,29 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*trim;
 	int		j;
 	int		i;
+	int		x;
 
 	if (!s1)
 		return (NULL);
-	trim = malloc(ft_strlen(s1) + 1 * sizeof(char));
-	if (trim == NULL)
-		return (0);
 	i = 0;
-	j = 0;
-	while (contains(set, s1[i]) == 1)
+	x = 0;
+	while (contains(set, s1[i]) == 1 || s1[i] == ' ')
 		i++;
-	while (s1[i] != '\0')
-		trim[j++] = s1[i++];
-	trim[j] = '\0';
-	i = (int)ft_strlen(trim) - 1;
-	if (i < 0)
+	j = ft_strlen(s1) - 1;
+	if (i == j + 1)
+	{
+		trim = (char *)malloc(1 * sizeof(char));
+		trim[0] = '\0';
 		return (trim);
-	while (contains(set, trim[i]) == 1)
-		i--;
-	trim[i + 1] = '\0';
+	}
+	while (contains(set, s1[j]) == 1 || s1[j] == ' ')
+		j--;
+	trim = (char *)malloc((j - i + 2) * sizeof(char));
+	if (trim == NULL)
+		return (NULL);
+	while (i <= j)
+		trim[x++] = s1[i++];
+	trim[x] = '\0';
 	return (trim);
 }
 

@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/28 12:02:17 by jtoty             #+#    #+#             */
-/*   Updated: 2022/04/19 17:34:53 by ssergiu          ###   ########.fr       */
+/*   Created: 2022/04/19 17:16:57 by ssergiu           #+#    #+#             */
+/*   Updated: 2022/04/19 17:19:27 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-int	main(void)
+void	ft_putstr_fd(char *s, int fd)
 {
-	ft_putendl_fd("lorem ipsum dolor sit amet", 2);
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+		write(fd, &s[i++], 1);
 }
