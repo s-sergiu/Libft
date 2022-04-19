@@ -29,11 +29,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (contains(set, s1[i]) == 1)
 		i++;
 	while (s1[i] != '\0')
-	{
-		trim[j] = s1[i];
-		i++;
-		j++;
-	}
+		trim[j++] = s1[i++];
 	trim[j] = '\0';
 	i = (int)ft_strlen(trim) - 1;
 	if (i < 0)
@@ -50,13 +46,7 @@ int	contains(char const *set, char s)
 
 	i = 0;
 	while (set[i])
-	{
-		if (s == set[i])
-		{
+		if (s == set[i++])
 			return (1);
-			i++;
-		}
-		i++;
-	}
 	return (0);
 }
