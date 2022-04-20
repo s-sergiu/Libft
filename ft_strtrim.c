@@ -24,18 +24,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	i = 0;
 	x = 0;
+	j = ft_strlen(s1) - 1;
 	while (contains(set, s1[i]) == 1 || s1[i] == ' ')
 		i++;
-	j = ft_strlen(s1) - 1;
-	if (i == j + 1)
-	{
-		trim = (char *)malloc(1 * sizeof(char));
-		trim[0] = '\0';
-		return (trim);
-	}
 	while (contains(set, s1[j]) == 1 || s1[j] == ' ')
 		j--;
-	trim = (char *)malloc((j - i + 2) * sizeof(char));
+	if (i == (int)ft_strlen(s1))
+		trim = (char *)malloc(1 * sizeof(char));
+	else
+		trim = (char *)malloc((j - i + 2) * sizeof(char));
 	if (trim == NULL)
 		return (NULL);
 	while (i <= j)

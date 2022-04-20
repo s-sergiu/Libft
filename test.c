@@ -14,5 +14,5 @@
 
 int	main(void)
 {
-	ft_putendl_fd("lorem ipsum dolor sit amet", 2);
+	ft_split("string that needs", ' ');
 }
