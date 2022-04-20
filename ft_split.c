@@ -6,7 +6,7 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:44:30 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/04/19 17:48:07 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/04/20 14:24:40 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -14,31 +14,9 @@
 char	**ft_split(char const *s, char c)
 {
 	char **result;
-	int i;
-	int j;
-	int x;
-	int a;
-
-	i = 0;
-	j = 0;
-	x = 0;
-	a = 0;
+	printf("dsads %c", c);
+	printf("sdasdas %s", s);
 	result = malloc(40 * sizeof(char)); 
-	while (a < 40)
-		result[a++] = malloc(15 * sizeof(char));
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-		{
-			while (s[i] != c)
-				i++;
-			j++;
-		}
-		result[j][x] = s[i];
-		x++;
-		i++;
-	}
-	result[j][0] = '\0';
 
 	return(result);
 }

@@ -6,7 +6,7 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:30:23 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/04/19 18:00:38 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/04/20 14:36:25 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -20,4 +20,5 @@ void	ft_putnbr_fd(int n, int fd)
 	i = 0;
 	while (s[i] != '\0')
 		write(fd, &s[i++], 1);
+	free(s);
 }
