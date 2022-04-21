@@ -6,7 +6,7 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 17:09:18 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/04/19 16:33:00 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/04/21 12:45:55 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -16,9 +16,9 @@ int	contains(char const *set, char s);
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*trim;
-	int		j;
-	int		i;
-	int		x;
+	size_t	j;
+	size_t	i;
+	size_t	x;
 
 	if (!s1)
 		return (NULL);
@@ -27,12 +27,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 	j = ft_strlen(s1) - 1;
 	while (contains(set, s1[i]) == 1 || s1[i] == ' ')
 		i++;
+	if (i == ft_strlen(s1))
+	{
+		trim = (char *)malloc(1 * sizeof(char));
+		trim[0] = '\0';
+		return(trim);
+	}
 	while (contains(set, s1[j]) == 1 || s1[j] == ' ')
 		j--;
-	if (i == (int)ft_strlen(s1))
-		trim = (char *)malloc(1 * sizeof(char));
-	else
-		trim = (char *)malloc((j - i + 2) * sizeof(char));
+	trim = (char *)malloc((j - i + 2) * sizeof(char));
 	if (trim == NULL)
 		return (NULL);
 	while (i <= j)

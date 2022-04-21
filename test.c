@@ -6,7 +6,7 @@
 /*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:02:17 by jtoty             #+#    #+#             */
-/*   Updated: 2022/04/20 14:42:33 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/04/21 18:43:46 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int	main(void)
 {
-	printf("%lu", sizeof(size_t));
+	char **str;
+	str = ft_split("jjstrjjstrjj", 'j');
+	printf("%s",str[0]);
 }

@@ -6,42 +6,61 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:44:30 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/04/20 14:24:40 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/04/21 18:41:54 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
+int	count_words(char const *s, char c)
+{
+	int	i;
+	int	wc;
+
+	i = 0;
+	wc = 0;
+	while (s[i] != '\0' || s[i] == c)
+	{
+		if (s[i] != c)
+		{
+			while (s[i] != c && s[i] != '\0')
+				i++;
+			wc++;
+		}
+		i++;
+	}
+	return (wc);
+}
+
 char	**ft_split(char const *s, char c)
 {
-	char **result;
-	printf("dsads %c", c);
-	printf("sdasdas %s", s);
-	result = malloc(40 * sizeof(char)); 
+	char	**str;
+	int		wc;
+	int		len;
+	int		index;
+	int		i;
 
-	return(result);
+	wc = count_words(s, c);
+	str = malloc((wc + 1) * sizeof(char));
+	i = 0;
+	index = 0;
+	while (i < wc)
+	{
+		while (s[i] != '\0' || s[i] == c)
+		{
+			if (s[i] != c)
+			{
+				while (s[i] != c && s[i] != '\0')
+				{
+					i++;
+					len++;
+				}
+			str[index] = malloc(len * sizeof(char));
+			str[index] = ft_substr(s, i - len, len);
+			index++;
+			}
+			i++;
+		}
+	}
+	str[index] = NULL;
+	return (str);
 }
-	/*
-	while (go over the string until it finds delimiter or reaches end)
-		if detects delimiter 
-			while counter position is not delimiter
-				counter++	
-		add to result[0] the chars until it detects delimiter
-		increment result offset;
-	
-	exit and add null to the offset of result;
-	*/
-
-	/*
-		s: The string to be split.
-	    c: The delimiter character.
-	*/
-
-	/*  The array of new strings resulting from the split.
-		NULL if the allocation fails.
-	*/
-
-	/*	Allocates (with malloc(3)) and returns an array
-		of strings obtained by splitting ’s’ using the
-		character ’c’ as a delimiter. The array must end
-		with a NULL pointer.
-	*/
