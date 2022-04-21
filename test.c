@@ -15,6 +15,8 @@
 int	main(void)
 {
 	char **str;
-	str = ft_split("jjstrjjstrjj", 'j');
+	char *irc = 0;
+
+	str = ft_split(irc, 0);
 	printf("%s",str[0]);
 }
