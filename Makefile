@@ -6,7 +6,7 @@
 #    By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/25 16:42:02 by ssergiu           #+#    #+#              #
-#    Updated: 2022/04/22 23:15:01 by ssergiu          ###   ########.fr        #
+#    Updated: 2022/04/23 12:01:33 by ssergiu          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,7 @@ FILES = ft_strlen \
 		ft_putendl_fd \
 		ft_putnbr_fd \
 		ft_split \
+		ft_lstsize \
 		ft_lstnew \
 		ft_lstadd_front \
 
@@ -59,6 +60,7 @@ SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
 
 OBJS_DIR = ./
 OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
+
 
 .c.o: $(SRCS)
 	$(CC) $(CFLAGS) -c -o $@ $<

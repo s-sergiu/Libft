@@ -6,7 +6,7 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 17:05:23 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/04/22 23:14:45 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/04/23 12:15:08 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,6 @@ void				ft_putnbr_fd(int n, int fd);
 char				**ft_split(char const *s, char c);
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **lst, t_list *new);
+int					ft_lstsize(t_list *lst);
 
 #endif
