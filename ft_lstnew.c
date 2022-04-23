@@ -1,43 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 17:30:23 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/04/21 17:33:12 by ssergiu          ###   ########.fr       */
+/*   Created: 2022/04/22 22:31:08 by ssergiu           #+#    #+#             */
+/*   Updated: 2022/04/22 23:10:13 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	slice(int n, int fd)
+t_list *ft_lstnew(void *content)
 {
-	char	temp;
-
-	if (n < 10)
-	{
-		temp = n + '0';
-		write(fd, &temp, 1);
-	}
-	else
-	{
-		slice((n / 10), fd);
-		temp = n % 10 + '0';
-		write(fd, &temp, 1);
-	}
-}
-
-void	ft_putnbr_fd(int n, int fd)
-{
-	if (n == -2147483648)
-		write(fd, "-2147483648", 11);
-	else if (n < 0)
-	{
-		write(fd, "-", 1);
-		n *= -1;
-		slice(n, fd);
-	}
-	else
-		slice(n, fd);
+	t_list *n1;
+	n1 = (t_list *)malloc(sizeof(t_list));
+	n1->content = content;	
+	n1->next = NULL;	
+	return (n1);
 }

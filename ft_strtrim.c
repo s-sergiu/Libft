@@ -31,7 +31,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		trim = (char *)malloc(1 * sizeof(char));
 		trim[0] = '\0';
-		return(trim);
+		return (trim);
 	}
 	while (contains(set, s1[j]) == 1 || s1[j] == ' ')
 		j--;
