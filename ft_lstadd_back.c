@@ -1,16 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/22 22:31:08 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/04/24 23:52:10 by ssergiu          ###   ########.fr       */
+/*   Created: 2022/04/24 23:53:47 by ssergiu           #+#    #+#             */
+/*   Updated: 2022/04/26 03:22:10 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
+	t_list	*current;
+
+	current = *lst;
+	while (current->next != NULL)
+		current = current->next;
+	current->next = new;
 }
