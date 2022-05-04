@@ -6,7 +6,7 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 09:57:22 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/04/11 13:54:43 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/05/03 01:43:24 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -16,7 +16,7 @@ size_t	ft_strlen(const char *str)
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (*(str + i))
 		i++;
 	return (i);
 }
