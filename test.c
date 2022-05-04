@@ -6,7 +6,7 @@
 /*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:02:17 by jtoty             #+#    #+#             */
-/*   Updated: 2022/04/26 03:38:19 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/04/30 12:59:41 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 int	main(void)
 {	
-	printf("size of int: %d \n", sizeof(int));
-	printf("size of int: %d \n", sizeof(int *));
+	char	src[] = "lorem ipsum dolor sit amet";
+	char	dest[] = "testsssss";
 
-	int *ptr;
-	int val = 1793765440;
-	printf("value is %d, and address is %#010x \n", val, ptr);
+	ft_memmove(dest, src, 5);
 }
