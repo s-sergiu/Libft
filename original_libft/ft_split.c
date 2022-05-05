@@ -6,71 +6,62 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:44:30 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/04/28 17:40:20 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/05/05 15:21:54 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	count_words(char const *s, char c)
+int	int_strchr(const char *s, int c)
 {
-	int	i;
-	int	wc;
+	size_t	i;
 
 	i = 0;
+	while (i++ <= ft_strlen(s))
+		if (s[i - 1] == (char)c)
+			return (i);
+	return (0);
+}
+
+int	count_words(char const *s, char c)
+{
+	int	wc;
+	int	offset;
+
 	wc = 0;
-	if (!s)
-		return(0);
-	while (s[i] != '\0' || s[i] == c)
+	while (ft_strlen(s))
 	{
-		if (s[i] != c)
-		{
-			while (s[i] != c && s[i] != '\0')
-				i++;
-			if (s[i] == '\0')
-			{
-				wc++;
-				return (wc);
-			}
+		s = ft_strtrim(s, &c);
+		offset = int_strchr(s, c);
+		if (!offset)
+			offset = ft_strlen(s) + 1;
 		wc++;
-		}
-		i++;
+		s = s + offset;
 	}
 	return (wc);
 }
 
 char	**ft_split(char const *s, char c)
 {
+	int		offset;
+	char	*string;
 	char	**str;
-	int		wc;
-	int		len;
 	int		index;
-	int		i;
 
-	wc = count_words(s, c);
-	str = malloc((wc + 1) * sizeof(char *));
+	if (!s)
+		return (NULL);
+	str = malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (!str)
 		return (NULL);
-	i = 0;
 	index = 0;
-	while (index < wc)
+	string = ft_strtrim(s, &c);
+	while (ft_strlen(string))
 	{
-		while (s[i] || s[i] == c)
-		{
-			if (s[i] != c)
-			{
-				len = 0;
-				while (s[i] != c && s[i])
-				{
-					i++;
-					len++;
-				}
-			str[index] = malloc((len + 1) * sizeof(char));
-			str[index++] = ft_substr(s, i - len, len);
-			}
-			if (s[i] == '\0')
-				i = i - 1;
-			i++;
-		}
+		string = ft_strtrim(string, &c);
+		offset = int_strchr(string, c);
+		if (!offset)
+			offset = ft_strlen(string) + 1;
+		str[index++] = ft_substr(string, 0, offset - 1);
+		string = string + offset;
 	}
 	str[index] = NULL;
 	return (str);

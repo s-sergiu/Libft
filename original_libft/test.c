@@ -6,7 +6,7 @@
 /*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 15:15:25 by jtoty             #+#    #+#             */
-/*   Updated: 2022/05/03 18:53:38 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/05/05 18:03:21 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 
 int main (void)
 {
-	t_list *new;
-
-	new = ft_lstnew(NULL);
-	if (!new)
-		printf("NULL");
-	else
-		printf("IS VALid");
+	printf("%s", ft_substr("", 0, 1));
 }
 
