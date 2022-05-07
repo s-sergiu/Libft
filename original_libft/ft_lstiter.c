@@ -6,14 +6,14 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 01:29:59 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/04/27 01:32:43 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/05/07 14:13:50 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list *curr;
+	t_list	*curr;
 
 	curr = lst;
 	while (curr)

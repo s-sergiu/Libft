@@ -6,12 +6,12 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:44:30 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/05/05 15:21:54 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/05/07 20:26:20 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	int_strchr(const char *s, int c)
+static int	int_strchr(const char *s, int c)
 {
 	size_t	i;
 
@@ -22,30 +22,27 @@ int	int_strchr(const char *s, int c)
 	return (0);
 }
 
-int	count_words(char const *s, char c)
+static int	count_words(char const *s, char c)
 {
-	int	wc;
-	int	offset;
+	int	i;
+	int	j;
 
-	wc = 0;
-	while (ft_strlen(s))
+	i = 0;
+	j = 0;
+	while (s[i] != c)
 	{
-		s = ft_strtrim(s, &c);
-		offset = int_strchr(s, c);
-		if (!offset)
-			offset = ft_strlen(s) + 1;
-		wc++;
-		s = s + offset;
+		i++;
+		j++;
 	}
-	return (wc);
+	return (j);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		offset;
-	char	*string;
 	char	**str;
+	int		i;
 	int		index;
+	int		lc;
 
 	if (!s)
 		return (NULL);
@@ -53,15 +50,17 @@ char	**ft_split(char const *s, char c)
 	if (!str)
 		return (NULL);
 	index = 0;
-	string = ft_strtrim(s, &c);
-	while (ft_strlen(string))
+	lc = 0;
+	i = 0;
+	while (ft_strlen(s))
 	{
-		string = ft_strtrim(string, &c);
-		offset = int_strchr(string, c);
-		if (!offset)
-			offset = ft_strlen(string) + 1;
-		str[index++] = ft_substr(string, 0, offset - 1);
-		string = string + offset;
+		while (s[i] != c)
+			i++;
+		s = s + i;
+		lc = count_word(s, c);
+		str[index] = (char *)malloc((lc + 1) * sizeof(char));
+		str[index++] = ft_substr(s, 0, lc);
+		i = i + lc;
 	}
 	str[index] = NULL;
 	return (str);

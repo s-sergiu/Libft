@@ -6,12 +6,12 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 17:09:18 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/04/27 15:17:19 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/05/07 15:05:01 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	contains(char const *set, char s)
+static int	contains(char const *set, char s)
 {
 	int	i;
 
@@ -22,7 +22,7 @@ int	contains(char const *set, char s)
 	return (0);
 }
 
-char	*trim_func(int i, int j, char const *s1, char *trim)
+static char	*trim_func(int i, int j, char const *s1, char *trim)
 {
 	int		x;
 
