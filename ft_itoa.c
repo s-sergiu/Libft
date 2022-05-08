@@ -6,12 +6,12 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 15:43:19 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/05/05 17:08:10 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/05/08 16:05:05 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	nlen(int n)
+static int	nlen(int n)
 {
 	int	i;
 	int	sign;
@@ -30,7 +30,7 @@ int	nlen(int n)
 	return (i + sign);
 }
 
-void	logic(int n, char *result, int len)
+static void	logic(int n, char *result, int len)
 {
 	char	temp;
 

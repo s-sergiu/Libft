@@ -6,12 +6,12 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:30:23 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/04/28 16:00:31 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/05/08 16:04:34 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	slice(int n, int fd)
+static void	slice(int n, int fd)
 {
 	char	temp;
 
