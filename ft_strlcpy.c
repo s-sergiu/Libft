@@ -6,7 +6,7 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 22:11:20 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/04/08 17:41:31 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/05/06 23:02:59 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -16,12 +16,12 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 
 	i = 0;
-	while (i < (dstsize - 1) && src[i] && dstsize != 0)
+	while (i < dstsize - 1 && src[i] && dstsize)
 	{
-		dst[i] = (unsigned char )src[i];
+		dst[i] = (char)src[i];
 		i++;
 	}
-	if (dstsize != 0)
+	if (dstsize)
 		dst[i] = '\0';
 	return (ft_strlen(src));
 }

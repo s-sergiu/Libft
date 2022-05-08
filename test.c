@@ -5,17 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/28 12:02:17 by jtoty             #+#    #+#             */
-/*   Updated: 2022/04/30 12:59:41 by ssergiu          ###   ########.fr       */
+/*   Created: 2017/02/28 15:15:25 by jtoty             #+#    #+#             */
+/*   Updated: 2022/05/07 14:33:16 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 int	main(void)
-{	
-	char	src[] = "lorem ipsum dolor sit amet";
-	char	dest[] = "testsssss";
-
-	ft_memmove(dest, src, 5);
+{
+	ft_split("this is a splitter string !", ' ');
+	return (0);
 }
