@@ -6,7 +6,7 @@
 #    By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/25 16:42:02 by ssergiu           #+#    #+#              #
-#    Updated: 2022/05/08 16:01:30 by ssergiu          ###   ########.fr        #
+#    Updated: 2022/05/09 21:44:16 by ssergiu          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,34 +51,40 @@ FILES = ft_strlen \
 		ft_putendl_fd \
 		ft_putnbr_fd \
 		ft_split \
-		ft_lstadd_back \
-		ft_lstdelone \
-		ft_lstclear \
-		ft_lstiter \
-		ft_lstmap \
-		ft_lstnew \
-		ft_lstadd_front \
-		ft_lstsize \
-		ft_lstlast \
-		ft_lstmap \
 
+FILES_B = ft_lstadd_back \
+		  ft_lstdelone \
+		  ft_lstclear \
+		  ft_lstiter \
+		  ft_lstmap \
+		  ft_lstnew \
+		  ft_lstadd_front \
+		  ft_lstsize \
+		  ft_lstlast \
+		  ft_lstmap \
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
+SRCS_B = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES_B)))
 
 OBJS_DIR = ./
 OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
+OBJS_B = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_B)))
+
+
+.c.o: $(SRCS)
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 $(NAME): $(OBJS)
 	$(AR) $@ $^
 
-.c.o: $(SRCS) 
-	$(CC) $(CFLAGS) -c -o $@ $<
+bonus: $(OBJS_B)
+	$(AR) $(NAME) $^
 
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(OBJS_B)
 
 fclean: clean
 	$(RM) $(NAME)

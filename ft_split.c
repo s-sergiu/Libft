@@ -6,14 +6,14 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:44:30 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/05/08 19:04:37 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/05/09 21:21:17 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 static char	*trim_string(char *s, char c)
 {
-	while (s[0] == c)
+	while (s[0] == c && c != 0)
 		s++;
 	return (s);
 }
@@ -25,9 +25,9 @@ static int	get_words(char const *s, char c)
 
 	i = 0;
 	wc = 0;
-	if (!s)
+	if (!s || !s[0])
 		return (0);
-	while (s[i] != '\0' || s[i] == c)
+	while (s[i] != 0 || s[i] == c)
 	{
 		if (s[i] != c)
 		{
@@ -55,6 +55,19 @@ static int	get_letters(char *s, char c)
 	return (i);
 }
 
+static char	**free_rest(char **str, int index)
+{
+	if (!index)
+	{
+		free(str);
+		return (NULL);
+	}
+	while (index >= 0)
+		free(str[index--]);
+	free(str);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**str;
@@ -62,11 +75,13 @@ char	**ft_split(char const *s, char c)
 	int		lc;
 
 	if (!s)
+	{
 		return (NULL);
+	}
 	str = (char **)malloc((get_words((char *)s, c) + 1) * sizeof(char *));
-	if (!str)
-		return (NULL);
 	index = 0;
+	if (!str)
+		return (free_rest(str, index));
 	if (s[0])
 		s = trim_string((char *)s, c);
 	while (ft_strlen(s))
@@ -74,10 +89,9 @@ char	**ft_split(char const *s, char c)
 		lc = get_letters((char *)s, c);
 		str[index] = (char *)malloc((lc + 1) * sizeof(char));
 		if (str[index] == NULL)
-			return (NULL);
-		ft_memcpy(str[index++], s, lc);
-		s = s + lc;
-		s = trim_string((char *)s, c);
+			return (free_rest(str, index));
+		ft_strlcpy(str[index++], s, lc + 1);
+		s = trim_string((char *)s + lc, c);
 	}
 	str[index] = NULL;
 	return (str);
