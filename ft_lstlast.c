@@ -6,7 +6,7 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 23:52:52 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/04/25 00:48:18 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/05/10 17:56:07 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstlast(t_list *lst)
 	if (!lst)
 		return (NULL);
 	tmp = lst;
-	while (tmp->next != NULL)
+	while (tmp->next)
 		tmp = tmp->next;
 	return (tmp);
 }

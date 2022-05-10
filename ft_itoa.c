@@ -6,7 +6,7 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 15:43:19 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/05/08 16:05:05 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/05/10 15:35:45 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,11 +18,11 @@ static int	nlen(int n)
 
 	i = 0;
 	sign = 0;
-	if (n == 0)
+	if (!n)
 		return (1);
 	if (n < 0)
 		sign = 1;
-	while (n != 0)
+	while (n)
 	{
 		n = n / 10;
 		i++;
@@ -42,9 +42,8 @@ static void	logic(int n, char *result, int len)
 	while (n > 0)
 	{
 		temp = (char )(n % 10) + '0';
-		result[len - 1] = temp;
+		result[(len--) - 1] = temp;
 		n = n / 10;
-		len--;
 	}
 }
 

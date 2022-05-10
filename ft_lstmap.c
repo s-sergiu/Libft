@@ -6,7 +6,7 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 18:35:38 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/05/09 20:57:31 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/05/10 18:10:00 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	ptr = lst;
 	new_lst = ft_lstnew(f(lst->content));
 	head = new_lst;
-	while (ptr->next != NULL)
+	while (ptr->next)
 	{
 		ptr = ptr->next;
 		new_lst->next = ft_lstnew(f(ptr->content));
