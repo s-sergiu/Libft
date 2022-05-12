@@ -6,13 +6,13 @@
 #    By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/25 16:42:02 by ssergiu           #+#    #+#              #
-#    Updated: 2022/05/09 21:44:16 by ssergiu          ###   ########.fr        #
+#    Updated: 2022/05/11 15:14:22 by ssergiu          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
@@ -63,25 +63,20 @@ FILES_B = ft_lstadd_back \
 		  ft_lstlast \
 		  ft_lstmap \
 
-SRCS_DIR = ./
-SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
-SRCS_B = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES_B)))
-
 OBJS_DIR = ./
 OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
 OBJS_B = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_B)))
 
-
-.c.o: $(SRCS)
-	$(CC) $(CFLAGS) -c -o $@ $<
+all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(AR) $@ $^
+	$(AR) $(NAME) $^
 
 bonus: $(OBJS_B)
 	$(AR) $(NAME) $^
 
-all: $(NAME)
+%.o:%.c
+	$(CC) $(CFLAGS) -c -o $@ $^
 
 clean:
 	$(RM) $(OBJS) $(OBJS_B)

@@ -6,7 +6,7 @@
 /*   By: ssergiu <ssergiu@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:44:30 by ssergiu           #+#    #+#             */
-/*   Updated: 2022/05/10 20:04:47 by ssergiu          ###   ########.fr       */
+/*   Updated: 2022/05/11 17:55:06 by ssergiu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -52,8 +52,11 @@ static int	get_letters(char *s, char c)
 
 static char	**free_rest(char **str, int index)
 {
-	while (index > 0)
-		free(str[index--]);
+	if (!index)
+		free(str);
+	else
+		while (index >= 0)
+			free(str[index--]);
 	free(str);
 	return (NULL);
 }
