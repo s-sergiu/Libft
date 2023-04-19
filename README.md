@@ -13,7 +13,7 @@ The goal of the project is to create a library of useful functions that can be u
 Use make to compile the static library (libft.a):
 	* ```make``` 
 
-	Or cmake: 
+Or cmake: 
 	* ```cmake -S . -B build```
 	* ```cmake --build build```
 
