@@ -18,7 +18,8 @@ The goal of the project is to create a library of useful functions that can be u
 * ```cmake --build build```
 
 ## Usage examples
- To be able to use it within your project you need to link it using the -I when you compile your object files and at the end when linking your object files to create the static archive you need to pass -l<name of the library> and -L<location of the archive file>.
+ To be able to use it within your project you need to link it using the -I when you compile your object files and at the end when linking your object files to create the static archive you need to pass -l(name of the library) and -L(location of the archive file). See example below:
+
  Example:
 * ``` NAME = name of main project```
 * ``` INC_FLAGS = path to your include directory```
