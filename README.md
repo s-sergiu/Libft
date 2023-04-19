@@ -4,7 +4,7 @@
 The goal of the project is to create a library of useful functions that can be used in future projects. The library contains functions for manipulating strings, memory, and lists, as well as other common programming tasks.
 
 ## Installation instructions
- Use make to make to compile the static library:
+ Use make to compile the static library (libft.a):
 * ```make``` 
 
 Or cmake: 
