@@ -23,9 +23,3 @@ Example:
 * GCC compiler;
 * GNU Make;
 * GNU ar;
-
-## Instructions for how to contribute to the project, including guidelines for submitting pull requests or issues
-
-## Licensing information
-
-## Contact information for the project maintainer or team.
