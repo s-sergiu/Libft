@@ -10,12 +10,12 @@ The goal of the project is to create a library of useful functions that can be u
  Cd into the directory:
 * ```cd Libft```
 
-Use make to compile the static library (libft.a):
-	* ```make``` 
+ Use make to compile the static library (libft.a):
+* ```make``` 
 
-Or cmake: 
-	* ```cmake -S . -B build```
-	* ```cmake --build build```
+ Or cmake: 
+* ```cmake -S . -B build```
+* ```cmake --build build```
 
 ## Usage examples
  To be able to use it within your project you need to link it using the -I when you compile your object files.
