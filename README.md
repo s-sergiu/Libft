@@ -13,11 +13,11 @@ Or cmake:
 ## Usage examples
 To be able to use it within your project you need to link it using the -I when you compile your object files.
 Example:
-``` NAME = name of main project```
-``` INC_FLAGS = path to your include directory```
-``` cc -Wall -Werror -Wextra -c source.c -o source.o -I$(INC_FLAGS)```
-``` LIBFT_OBJ = path to your libft.a file```
-``` cc -Wall -Werror -Wextra source.o -lft -L$(LIBFT_OBJ) -o $(NAME)```
+* ``` NAME = name of main project```
+* ``` INC_FLAGS = path to your include directory```
+* ``` cc -Wall -Werror -Wextra -c source.c -o source.o -I$(INC_FLAGS)```
+* ``` LIBFT_OBJ = path to your libft.a file```
+* ``` cc -Wall -Werror -Wextra source.o -lft -L$(LIBFT_OBJ) -o $(NAME)```
 
 ## Any dependencies or prerequisites required for the project
 * GCC compiler;
