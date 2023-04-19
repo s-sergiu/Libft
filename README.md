@@ -4,12 +4,18 @@
 The goal of the project is to create a library of useful functions that can be used in future projects. The library contains functions for manipulating strings, memory, and lists, as well as other common programming tasks.
 
 ## Installation instructions
- Use make to compile the static library (libft.a):
-* ```make``` 
+ Clone the repository:
+* ```git clone https://github.com/s-sergiu/Libft.git```
 
-Or cmake: 
-* ```cmake -S . -B build```
-* ```cmake --build build```
+ Cd into the directory:
+* ```cd Libft```
+
+Use make to compile the static library (libft.a):
+	* ```make``` 
+
+	Or cmake: 
+	* ```cmake -S . -B build```
+	* ```cmake --build build```
 
 ## Usage examples
  To be able to use it within your project you need to link it using the -I when you compile your object files.
