@@ -43,7 +43,10 @@ static int	get_letters(char *s, char c)
 static char	**free_rest(char **str, int index)
 {
 	if (!index)
+	{
 		free(str);
+		return (NULL);
+	}
 	else
 		while (index >= 0)
 			free(str[index--]);

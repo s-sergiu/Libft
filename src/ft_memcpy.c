@@ -5,7 +5,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	int	i;
 
-	if (!dst && !src)
+	if (!dst || !src)
 		return (NULL);
 	i = -1;
 	while (++i < (int)n)
