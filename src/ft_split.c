@@ -54,7 +54,7 @@ static char	**free_rest(char **str, int index)
 	return (NULL);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(t_memory **block, char const *s, char c)
 {
 	char	**str;
 	int		index;
@@ -65,6 +65,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	}
 	str = (char **)malloc((get_words((char *)s, c) + 1) * sizeof(char *));
+	add_memory_block(block, str, sizeof(char **));
 	if (!str)
 		return (free_rest(str, 0));
 	if (s[0])
@@ -74,6 +75,7 @@ char	**ft_split(char const *s, char c)
 	{
 		lc = get_letters((char *)s, c);
 		str[index] = (char *)malloc((lc + 1) * sizeof(char));
+		add_memory_block(block, str[index], sizeof(char *));
 		if (!str[index])
 			return (free_rest(str, index));
 		ft_strlcpy(str[index++], s, lc + 1);
