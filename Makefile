@@ -1,51 +1,54 @@
 NAME=libft.a
 
+SHELL = /bin/sh
+
 CFLAGS=-Wall -Wextra -Werror -Iinclude
 ARFLAGS=rcs
+VPATH=src
 
-OBJ=  src/ft_atoi.o \
-	  src/ft_bzero.o \
-	  src/ft_calloc.o \
-	  src/ft_isalnum.o \
-	  src/ft_isalpha.o \
-	  src/ft_isascii.o \
-	  src/ft_isdigit.o \
-	  src/ft_isprint.o \
-	  src/ft_itoa.o \
-	  src/ft_lstadd_back.o \
-	  src/ft_lstadd_front.o \
-	  src/ft_lstclear.o \
-	  src/ft_lstdelone.o \
-	  src/ft_lstiter.o \
-	  src/ft_lstlast.o \
-	  src/ft_lstmap.o \
-	  src/ft_lstnew.o \
-	  src/ft_lstsize.o \
-	  src/ft_memchr.o \
-	  src/ft_memcmp.o \
-	  src/ft_memcpy.o \
-	  src/ft_memmove.o \
-	  src/ft_memset.o \
-	  src/ft_putchar_fd.o \
-	  src/ft_putendl_fd.o \
-	  src/ft_putnbr_fd.o \
-	  src/ft_putstr_fd.o \
-	  src/ft_split.o \
-	  src/ft_strchr.o \
-	  src/ft_strdup.o \
-	  src/ft_striteri.o \
-	  src/ft_strjoin.o \
-	  src/ft_strlcat.o \
-	  src/ft_strlcpy.o \
-	  src/ft_strlen.o \
-	  src/ft_strmapi.o \
-	  src/ft_strncmp.o \
-	  src/ft_strnstr.o \
-	  src/ft_strrchr.o \
-	  src/ft_strtrim.o \
-	  src/ft_substr.o \
-	  src/ft_tolower.o \
-	  src/ft_toupper.o
+OBJ=  ft_atoi.o \
+	  ft_bzero.o \
+	  ft_calloc.o \
+	  ft_isalnum.o \
+	  ft_isalpha.o \
+	  ft_isascii.o \
+	  ft_isdigit.o \
+	  ft_isprint.o \
+	  ft_itoa.o \
+	  ft_lstadd_back.o \
+	  ft_lstadd_front.o \
+	  ft_lstclear.o \
+	  ft_lstdelone.o \
+	  ft_lstiter.o \
+	  ft_lstlast.o \
+	  ft_lstmap.o \
+	  ft_lstnew.o \
+	  ft_lstsize.o \
+	  ft_memchr.o \
+	  ft_memcmp.o \
+	  ft_memcpy.o \
+	  ft_memmove.o \
+	  ft_memset.o \
+	  ft_putchar_fd.o \
+	  ft_putendl_fd.o \
+	  ft_putnbr_fd.o \
+	  ft_putstr_fd.o \
+	  ft_split.o \
+	  ft_strchr.o \
+	  ft_strdup.o \
+	  ft_striteri.o \
+	  ft_strjoin.o \
+	  ft_strlcat.o \
+	  ft_strlcpy.o \
+	  ft_strlen.o \
+	  ft_strmapi.o \
+	  ft_strncmp.o \
+	  ft_strnstr.o \
+	  ft_strrchr.o \
+	  ft_strtrim.o \
+	  ft_substr.o \
+	  ft_tolower.o \
+	  ft_toupper.o
 
 all: $(NAME)
 
@@ -61,3 +64,5 @@ fclean: clean
 re: clean all
 
 .PHONY: all clean fclean re
+.SUFFIXES:
+.SUFFIXES: .c .o
