@@ -1,11 +1,15 @@
+# binary name
 NAME=libft.a
 
+# overwrite env vars
 SHELL = /bin/sh
 
+# flags
 CFLAGS=-Wall -Wextra -Werror -Iinclude
 ARFLAGS=rcs
 VPATH=src
 
+# object files
 OBJ=  ft_atoi.o \
 	  ft_bzero.o \
 	  ft_calloc.o \
@@ -50,6 +54,7 @@ OBJ=  ft_atoi.o \
 	  ft_tolower.o \
 	  ft_toupper.o
 
+# rules
 all: $(NAME)
 
 $(NAME): $(OBJ)
@@ -63,6 +68,7 @@ fclean: clean
 
 re: clean all
 
+# special built-in targets
 .PHONY: all clean fclean re
 .SUFFIXES:
 .SUFFIXES: .c .o
