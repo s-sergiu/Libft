@@ -56,7 +56,9 @@ OBJ=ft_atoi.o \
 	ft_printf.o \
 	ft_itoa_unsigned.o \
 	printf_utils.o \
-	check_utils.o
+	check_utils.o \
+	get_next_line.o \
+	get_next_line_utils.o
 
 # rules
 all: $(NAME)
