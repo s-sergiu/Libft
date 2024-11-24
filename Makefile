@@ -52,7 +52,11 @@ OBJ=ft_atoi.o \
 	ft_strtrim.o \
 	ft_substr.o \
 	ft_tolower.o \
-	ft_toupper.o
+	ft_toupper.o \
+	ft_printf.o \
+	ft_itoa_unsigned.o \
+	printf_utils.o \
+	check_utils.o
 
 # rules
 all: $(NAME)
