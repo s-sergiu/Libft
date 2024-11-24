@@ -1,7 +1,7 @@
 # binary name
 NAME=libft.a
 
-# overwrite env vars
+# variables
 SHELL=/bin/sh
 
 # flags
