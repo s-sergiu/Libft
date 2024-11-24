@@ -2,7 +2,6 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <string.h>
 # include <stdlib.h>
 # include <stdarg.h>
 # include <unistd.h>
@@ -13,8 +12,6 @@
 #  define BUFFER_SIZE 42
 # endif
 
-typedef struct s_memory		t_memory;
-
 typedef struct s_list
 {
 	void			*content;
@@ -22,8 +19,6 @@ typedef struct s_list
 }					t_list;
 
 // libft
-
-void				add_memory_block(t_memory **head, void *ptr, size_t size);
 int					ft_atoi(const char *str);
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t count, size_t size);
