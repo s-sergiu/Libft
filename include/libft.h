@@ -2,11 +2,16 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
 # include <string.h>
 # include <stdlib.h>
+# include <stdarg.h>
 # include <unistd.h>
 # include <stddef.h>
+# include <fcntl.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 typedef struct s_memory		t_memory;
 
@@ -15,6 +20,8 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+// libft
 
 void				add_memory_block(t_memory **head, void *ptr, size_t size);
 int					ft_atoi(const char *str);
@@ -62,4 +69,26 @@ void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+// get_next_line 
+char		*get_next_line(int fd);
+char		*ft_strjoin_gnl(char const *s1, char const *s2, int flag);
+char		*read_line(int fd);
+int			check_input(int fd);
+int			has_newline(char *buffer);
+int			get_newline_pos(char *buffer);
+char		*get_line(char *stash);
+char		*get_rest(char *string);
+
+// printf
+int		print_p(unsigned long n);
+int		print_string(char *str);
+int		print_int(int n);
+int		print_unsigned_int(unsigned int n);
+int		ft_printf(const char *format, ...);
+char	*ft_itoa_unsigned(unsigned int n);
+int		hex_len(unsigned int n);
+void	dectohex(unsigned int n, char format);
+int		put_hex(unsigned int n, char format);
+int		pointerhex(unsigned long n, int i);
+
 #endif
